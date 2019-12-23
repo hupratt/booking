@@ -1,13 +1,13 @@
-# Portfolio web application
+# Booking web application
 
 status: actively maintained
 
-https://portfolio.pythonbots.site/
+https://booking.pythonbots.site/
 
 ## Architecture
 
-- Portfolio is a django web app with standard static templating running on apache as a web server.
-- Apache proxies requests to the standard WSGI application which invokes the Portfolio application itself.
+- Booking is a django web app with standard static templating running on apache as a web server.
+- Apache proxies requests to the standard WSGI application which invokes the Booking application itself.
 - There is no decoupling of the front end.
 - There is no reverse proxy yet. This will be implemented in case there is a need to do load balancing or unburden the webserver from serving static content (js, css, images).
 - The continuous delivery pipeline is triggered by a git push to origin by any member that has write access to this repo.
