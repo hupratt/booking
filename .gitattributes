@@ -1,0 +1,8 @@
+
+# Sentry
+myserver.key
+.~lock.myserver.key# 
+server.csr
+
+static/* linguist-vendored
+ *.* linguist-language=Python
