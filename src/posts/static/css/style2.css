@@ -408,6 +408,15 @@ margin-left: 15px;
 .intro-img-box {
   position: relative;
   margin-bottom: 70px;
+  max-width:100%;
+  max-height:100%;
+  vertical-align: middle;
+}
+
+.intro-img-box img {
+height:400px;
+object-fit: cover;
+width:700px;
 }
 
 .intro-img-box h4 {
