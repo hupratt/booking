@@ -1176,6 +1176,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @keyframes fadeInUp {
   0% {
     opacity: 0;
+    visibility: visible;
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
@@ -1183,6 +1184,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   100% {
     opacity: 1;
+    visibility: visible;
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);

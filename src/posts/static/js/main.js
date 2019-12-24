@@ -36,7 +36,7 @@ $(window).on("load", function() {
   });
 
   /*------------------
-		Hero Slider
+		Hero Slider: intro
 	--------------------*/
   var bigimage = $(".hero-slider");
   var thumbs = $(".hero-nav-slider");
