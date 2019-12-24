@@ -254,6 +254,8 @@ Hero section
 
 .hero-slider .owl-item .hs-item a {
   visibility: hidden;
+  background-color: #1cc3b2;
+  top:3vh;
 }
 
 .hero-slider .owl-item.active .hs-item a {
@@ -320,8 +322,14 @@ Hero section
   z-index: 6;
 }
 
+.container{
+margin-right: 15px;
+margin-left: 15px;
+}
+
 .hero-nav-slider {
   background: rgba(255, 255, 255, 0.15);
+
 }
 
 .hero-nav-slider .hns-item {
