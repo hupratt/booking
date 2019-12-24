@@ -33,6 +33,7 @@ urlpatterns += i18n_patterns(
     path('about', TemplateView.as_view(template_name="about.html"), name='about'), 
     path('detail', TemplateView.as_view(template_name="detail.html"), name='detail'), 
     path('properties', TemplateView.as_view(template_name="properties.html"), name='properties'), 
+    path('search', TemplateView.as_view(template_name="search.html"), name='search'), 
     path(_('posts/'), include('posts.urls')),
     prefix_default_language=True)
 
