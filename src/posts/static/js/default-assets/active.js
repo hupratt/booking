@@ -14,7 +14,7 @@
   });
 
   // ****************************
-  // :: 2.0 ClassyNav Active Code
+  // :: 2.0 ClassyNav Active Code UNUSED
   // ****************************
 
   if ($.fn.classyNav) {
@@ -22,7 +22,7 @@
   }
 
   // ***************************
-  // :: 3.0 Single Project Slide
+  // :: 3.0 Single Project Slide UNUSED
   // ***************************
 
   $(".single-project-slide").on("mouseenter", function() {
@@ -31,7 +31,7 @@
   });
 
   // *********************************
-  // :: 4.0 Welcome Slides Active Code
+  // :: 4.0 Search page
   // *********************************
 
   if ($.fn.owlCarousel) {
@@ -104,7 +104,7 @@
   }
 
   // *********************************
-  // :: 5.0 Project Slides Active Code
+  // :: 5.0 Project Slides Active Code UNUSED
   // *********************************
   if ($.fn.owlCarousel) {
     var projectSlide = $(".projects-slides");
@@ -133,7 +133,7 @@
   }
 
   // *************************************
-  // :: 6.0 Testimonial Slides Active Code
+  // :: 6.0 Testimonial Slides Active Code UNUSED
   // *************************************
   if ($.fn.owlCarousel) {
     var testiThumbSlide = $(".testimonial-thumbnail");
@@ -157,8 +157,9 @@
   }
 
   // *******************************
-  // :: 7.0 Rooms Slides Active Code
+  // :: 7.0 Rooms Slides Active Code UNUSED
   // *******************************
+
   if ($.fn.owlCarousel) {
     var roomSlides = $(".rooms-slides");
     roomSlides.owlCarousel({
@@ -206,7 +207,7 @@
   }
 
   // ********************************
-  // :: 8.0 Search Button Active Code
+  // :: 8.0 Search Button Active Code UNUSED
   // ********************************
   $(".search-btn").on("click", function() {
     $(".search-form").toggleClass("search-form-active");
@@ -216,7 +217,7 @@
   // :: 9.0 Magnific Popup Active Code
   // *********************************
   if ($.fn.magnificPopup) {
-    $(".video-play-btn").magnificPopup({
+    $(".play-btn").magnificPopup({
       type: "iframe"
     });
   }
@@ -249,7 +250,7 @@
   // ****************************
   if ($.fn.scrollUp) {
     roberto_window.scrollUp({
-      scrollSpeed: 1500,
+      scrollSpeed: 1000,
       scrollText: '<i class="fa fa-caret-up"></i>'
     });
   }

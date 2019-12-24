@@ -29,7 +29,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('', TemplateView.as_view(template_name="index.html"), name='index'), 
+    path('', TemplateView.as_view(template_name="intro.html"), name='intro'), 
     path('about', TemplateView.as_view(template_name="about.html"), name='about'), 
     path('detail', TemplateView.as_view(template_name="detail.html"), name='detail'), 
     path('properties', TemplateView.as_view(template_name="properties.html"), name='properties'), 

@@ -252,6 +252,21 @@ Hero section
   position: relative;
 }
 
+.hero-slider .owl-item .hs-item a {
+  visibility:hidden;
+}
+
+.hero-slider .owl-item.active .hs-item a {
+  visibility:visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
 .hero-slider .owl-item.active .hs-item h2 {
   top: 0;
   opacity: 1;

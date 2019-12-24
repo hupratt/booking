@@ -47,7 +47,7 @@ $(window).on("load", function() {
       items: 1,
       slideSpeed: 10000,
       nav: true,
-      autoplay: true,
+      autoplay: false,
       dots: false,
       animateOut: "fadeOut",
       animateIn: "fadeIn",
