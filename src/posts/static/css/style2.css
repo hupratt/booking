@@ -239,8 +239,8 @@ Hero section
 }
 
 .hs-item {
-  height: 1068px;
-  padding-top: 250px;
+  height: 100vh;
+  padding-top: 10vh;
 }
 
 .hs-item h2 {
@@ -306,7 +306,7 @@ Hero section
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 140px;
+  bottom: 10vh;
   z-index: 6;
 }
 
