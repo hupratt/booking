@@ -157,6 +157,26 @@ $(window).on("load", function() {
     ]
   });
 
+  /*----------------------------
+		Header fixed to header disappear
+	------------------------------*/
+  var header = $("header");
+  var logo = $(header).find(".logo img");
+  var linkLogo1 = $(logo).attr("src");
+  var linkLogo2 = $(logo).data("logofixed");
+  var button = $(header).find(".trendybutton");
+
+  $(window).on("scroll", function() {
+    if ($(this).scrollTop() > 5 && $(this).width() > 992) {
+      $(logo).attr("src", linkLogo2);
+      $(header).addClass("header-fixed");
+      $(button).show();
+    } else {
+      $(header).removeClass("header-fixed");
+      $(logo).attr("src", linkLogo1);
+      $(button).hide();
+    }
+  });
   /*------------------
 		Features Slider
 	--------------------*/

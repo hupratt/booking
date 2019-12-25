@@ -9,6 +9,5 @@ from . import views
 urlpatterns = [
     path('about', views.AboutView.as_view(), name='about'), 
     path('<slug:slug>', views.detail, name="detail"),
-    path('detail', TemplateView.as_view(template_name="detail.html"), name='detail'), 
 
 ]

@@ -1661,6 +1661,9 @@ html .ui-button.ui-state-disabled:active {
   .single-service-area:hover .service-title, .single-service-area:focus .service-title {
     background-color: #2a303b; }
 
+.container-fluid {
+  padding:0
+}
 .roberto-service-area {
   position: relative;
   z-index: 1; }
@@ -1717,8 +1720,8 @@ html .ui-button.ui-state-disabled:active {
 .hotel-search-form-area {
   position: relative;
   z-index: 1;
-  padding-left: 10%;
-  padding-right: 10%; }
+
+}
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .hotel-search-form-area {
       padding-left: 2%;

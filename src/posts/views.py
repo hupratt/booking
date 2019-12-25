@@ -41,7 +41,7 @@ def detail(request, slug):
     sys.path.append("..")
     from booking.translate import translate
 
-    img_list = PostImage.objects.filter(post=post)  # pylint: disable=no-member
+    img_list = PostImage.objects.filter(post=post)  
 
     if language == "en":
         context = {

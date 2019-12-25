@@ -51,16 +51,16 @@
     </div>
   </div>
   <div class="container">
-
-    
       {% for property in properties %}
-      {% if forloop.counter == 2 %} 
+      {% if forloop.counter|divisibleby:2 %} 
       <div class="row">
       <div class="col-lg-8">
         <div class="intro-img-box">
           <h4>{{ property.title }}</h4>
           {% for img in property.images.all %}
+          {% if forloop.last %} 
           <img src="{{ img.image.url }}" onclick="location.href='{{ property.get_absolute_url }}';" alt="{{ img.alt }}" />
+          {% endif %}	
           {% endfor %}
         </div>
       </div>
@@ -88,7 +88,9 @@
         <div class="intro-img-box">
           <h4>{{ property.title }}</h4>
           {% for img in property.images.all %}
+          {% if forloop.last %} 
           <img src="{{ img.image.url }}" onclick="location.href='{{ property.get_absolute_url }}';" alt="{{ img.alt }}" />
+          {% endif %}	
           {% endfor %}
         </div>
       </div>
