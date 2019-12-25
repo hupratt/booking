@@ -23,6 +23,7 @@ from django.views.generic import TemplateView
 from django.utils.translation import ugettext_lazy as _
 from django.urls import path
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -30,8 +31,6 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', TemplateView.as_view(template_name="intro.html"), name='intro'), 
-    path('about', TemplateView.as_view(template_name="about.html"), name='about'), 
-    path('detail', TemplateView.as_view(template_name="detail.html"), name='detail'), 
     path('properties', TemplateView.as_view(template_name="properties.html"), name='properties'), 
     path('search', TemplateView.as_view(template_name="search.html"), name='search'), 
     path(_('posts/'), include('posts.urls')),

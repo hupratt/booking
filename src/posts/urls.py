@@ -2,8 +2,13 @@ from django.conf.urls import url
 from . import views
 # from django.conf import settings
 # from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from django.urls import path # pylint: disable=no-name-in-module
+from . import views
 
 urlpatterns = [
-    # url(r'^(?P<slug>[-\w\d]+)/', views.detail, name='detail'),
-    # url(r'^(?P<id>\d+)/like/$', PostLikeToggle.as_view(), name='like-toggle'),
+    path('about', views.AboutView.as_view(), name='about'), 
+    path('<slug:slug>', views.detail, name="detail"),
+    path('detail', TemplateView.as_view(template_name="detail.html"), name='detail'), 
+
 ]

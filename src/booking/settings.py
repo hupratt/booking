@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'klingon',
     'posts',
 ]
 
@@ -77,12 +78,28 @@ WSGI_APPLICATION = 'booking.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if os.environ.get("DJANGO_DEVELOPMENT") is not None:
+    DATABASES = {
+        "default": {
+            "ENGINE": os.environ.get("enginedb"),
+            "NAME": "booking",
+            "USER": os.environ.get("dbuser"),
+            "PASSWORD": os.environ.get("dbpassword"),
+            "HOST": os.environ.get("hostip"),  # hostipdev
+            "PORT": os.environ.get("pnumber"),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "booking",
+            "USER": os.environ.get("dbuser"),
+            "PASSWORD": os.environ.get("dbpassword"),
+            "HOST": os.environ.get("hostip"),
+            "PORT": os.environ.get("pnumber"),
+        }
+    }
 
 
 # Password validation
