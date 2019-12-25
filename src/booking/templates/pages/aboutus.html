@@ -54,12 +54,11 @@
 
     <div class="row">
       {% for property in properties %}
-
       <div class="col-lg-8">
         <div class="intro-img-box">
           <h4>{{ property.title }}</h4>
           {% for img in property.images.all %}
-          <img src="/static/img/houses/outside/{{ img.image.url }}" onclick="location.href='{{ property.get_absolute_url }}';" alt="" />
+          <img src="{{ img.image.url }}" onclick="location.href='{{ property.get_absolute_url }}';" alt="{{ img.alt }}" />
           {% endfor %}
         </div>
       </div>
@@ -71,25 +70,6 @@
           <a href="{{ property.get_absolute_url }}" class="site-btn">MORE INFO</a>
         </div>
       </div>
-      <!-- <div class="col-lg-4 align-items-end d-flex order-2 order-lg-1">
-        <div class="intro-text-box">
-          <p>
-            Nam gravida elit non massa congue, ac commodo ipsum mattis. Fusce
-            erat magna, egestas vitae arcu non, posu-ere iaculis leo. Sed a
-            lectus risus. Morbi eros sapien, inter-dum ut sollicitudin eget,
-            porttitor nec elit. Fusce dignis-sim velit sit amet ligula dapibus
-            fringilla. Cras fermentum consequat ornare. Etiam tempus ex nec nibh
-            eleifend, nec tempus ipsum finibus.
-          </p>
-          <a href="{% url 'detail' %}" class="site-btn">MORE INFO</a>
-        </div>
-      </div>
-      <div class="col-lg-8 order-1 order-lg-2">
-        <div class="intro-img-box">
-          <h4>Algarve</h4>
-          <img src="{% static 'img/houses/outside/algarve-pool.jpg' %}" alt="" />
-        </div>
-      </div> -->
       {% endfor %}
 
     </div>

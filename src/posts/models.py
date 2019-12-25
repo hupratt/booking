@@ -16,8 +16,8 @@ class Post(models.Model, Translatable):
     # ipython = models.FileField(blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=False)
-    slug = models.SlugField(null=False, unique=True, default="event")
-    tag = models.CharField(max_length=120, default="event")
+    slug = models.SlugField(null=False, unique=True, default="property")
+    tag = models.CharField(max_length=120, default="property")
     content = models.TextField(null=True, blank=True)
     draft = models.BooleanField(default=False)
     translatable_fields = ("title", "content")
@@ -27,12 +27,6 @@ class Post(models.Model, Translatable):
 
     def __unicode__(self):
         return self.title
-
-    @staticmethod
-    def get_image_path(instance, filename):
-        return os.path.join(
-            "photos", str(instance.id), filename
-        )  # pylint: disable=no-member
 
     def get_absolute_url(self):
         return reverse(
@@ -59,13 +53,19 @@ class Post(models.Model, Translatable):
         super(Post, self).save(*args, **kwargs)
 
 class PostImage(models.Model):
-    image = models.FileField(blank=True, null=True)
+    image = models.FileField( blank=True, null=True)
     post = models.ForeignKey("post", on_delete=models.PROTECT, related_name='images')
     created = models.DateTimeField(auto_now_add=True)
-    alt = models.CharField(max_length=120, blank=True, null=True)
+    alt = models.CharField(max_length=120, default="blank")
 
     def __str__(self):
         return self.alt
-
+            
     def __unicode__(self):
         return self.alt
+
+    @staticmethod
+    def get_image_path(instance):
+        return os.path.join(
+            "static", instance.id
+        )  
