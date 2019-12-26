@@ -2,7 +2,7 @@
 
 status: actively maintained
 
-https://booking.pythonbots.site/
+https://rural.pythonbots.site/
 
 ## Architecture
 
