@@ -21,7 +21,8 @@
       </div>
       <!-- Menu -->
       <div class="wrap_menu p-l-45 p-l-0-xl">
-        <button onclick="location.href='{% url 'search' %}';" class="trendybutton">book now</button>
+        <a class='hoverbtn' href="{% url 'search' %}">Book now</a>
+        <!-- <button class="wt-btn_sign"><span class="wt-btn_sign-bound"><span data-width="#fff" data-text="book now">book now</span></span></button> -->
       </div>
     </div>
   </div>
@@ -45,7 +46,7 @@
 {% block scripts %} 
 
 <script>
-$(".trendybutton").hide();
+$(".hoverbtn").hide();
 </script>
 
 {% endblock %}

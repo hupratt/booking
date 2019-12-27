@@ -165,16 +165,19 @@ $(window).on("load", function() {
   var linkLogo1 = $(logo).attr("src");
   var linkLogo2 = $(logo).data("logofixed");
   var button = $(header).find(".trendybutton");
+  var button2 = $(header).find(".hoverbtn");
 
   $(window).on("scroll", function() {
     if ($(this).scrollTop() > 5 && $(this).width() > 992) {
       $(logo).attr("src", linkLogo2);
       $(header).addClass("header-fixed");
       $(button).show();
+      $(button2).show();
     } else {
       $(header).removeClass("header-fixed");
       $(logo).attr("src", linkLogo1);
       $(button).hide();
+      $(button2).hide();
     }
   });
   /*------------------

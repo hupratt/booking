@@ -2206,6 +2206,7 @@ Responsive
 
 .logo>a>img {
   width: auto;
+  margin-top: 15px;
   height: 70px;
   margin-left: 20px;
   vertical-align: middle;
@@ -2295,9 +2296,10 @@ Responsive
 .trendybutton{
   border-radius: 8px;
   margin-top: 10px;
-	float: left;
+  float: left;
+  text-align: center;
 	min-width: 150px;
-	max-width: 250px;
+	max-width: 200px;
 	display: block;
 	margin: 1em;
 	padding: 1em 2em;
@@ -2360,4 +2362,202 @@ Responsive
 	transform: rotate3d(0, 0, 1, 0deg);
 	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+@-webkit-keyframes top {
+  from {
+    -webkit-transform: translate(0rem, 0);
+            transform: translate(0rem, 0);
+  }
+  to {
+    -webkit-transform: translate(0rem, 3.5rem);
+            transform: translate(0rem, 3.5rem);
+  }
+}
+
+@keyframes top {
+  from {
+    -webkit-transform: translate(0rem, 0);
+            transform: translate(0rem, 0);
+  }
+  to {
+    -webkit-transform: translate(0rem, 3.5rem);
+            transform: translate(0rem, 3.5rem);
+  }
+}
+@-webkit-keyframes bottom {
+  from {
+    -webkit-transform: translate(-11.5rem, 0);
+            transform: translate(-11.5rem, 0);
+  }
+  to {
+    -webkit-transform: translate(-2rem, 0);
+            transform: translate(-2rem, 0);
+  }
+}
+@keyframes bottom {
+  from {
+    -webkit-transform: translate(-11.5rem, 0);
+            transform: translate(-11.5rem, 0);
+  }
+  to {
+    -webkit-transform: translate(-2rem, 0);
+            transform: translate(-2rem, 0);
+  }
+}
+a {
+  color: #1cc3b2;
+}
+.hoverbtn {
+  position: relative;
+  top: 20px;
+  letter-spacing: 0.15em;
+  margin: 0 auto;
+  padding: 0.5rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  color: #1cc3b2;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+}
+.hoverbtn::after, .hoverbtn::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 0%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+  border-radius: 50%;
+}
+.hoverbtn::before {
+  background-color: #a4dfd9;;
+  top: -0.75rem;
+  left: 0.5rem;
+  /* -webkit-animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+          animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate; */
+}
+.hoverbtn::after {
+  background-color: #1cc3b2;
+  top: 3rem;
+  left: 13rem;
+  /* -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+          animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate; */
+}
+.hoverbtn:hover {
+  color: white;
+}
+.hoverbtn:hover::before, .hoverbtn:hover::after {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  -webkit-animation: none;
+          animation: none;
+}
+.hoverbtn:hover::after {
+  left: 0rem;
+
+}
+.hoverbtn:hover::before {
+  top: 0.5rem;
+  left: 0.35rem;
+}
+
+
+
+.wt-btn_sign {
+  font-size: 23px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.21px;
+  white-space: nowrap;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  line-height: 20px;
+  color: #f6416c;
+  background: #ffde7d;
+  border: none;
+  height: 45px;
+  padding: 0 5px;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+}
+
+.wt-btn_sign:hover {
+  color: #ffde7d;
+  background: #f6416c;
+}
+
+.wt-btn_sign-bound {
+  display: block;
+  overflow: hidden;
+}
+
+.wt-btn_sign-bound span {
+  position: relative;
+  display: inline-block;
+  padding: 0 22px;
+  -webkit-animation: wt-btn_sign-marquee 2s linear infinite;
+  -moz-animation: wt-btn_sign-marquee 2s linear infinite;
+  -o-animation: wt-btn_sign-marquee 2s linear infinite;
+  animation: wt-btn_sign-marquee 2s linear infinite;
+}
+
+.wt-btn_sign-bound span:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 100%;
+  padding: 0 23px;
+}
+
+@-webkit-keyframes wt-btn_sign-marquee {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-moz-keyframes wt-btn_sign-marquee {
+  0% {
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-o-keyframes wt-btn_sign-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes wt-btn_sign-marquee {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
 }
