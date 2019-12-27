@@ -27,6 +27,16 @@ $(window).on("load", function() {
     event.preventDefault();
   });
 
+  $(".wrap_menu .hoverbtn").on("click", function(event) {
+    event.preventDefault();
+    $(".wrap_menu .hotel-search-form-area").show();
+  });
+
+  $(".wrap_menu .closebtn").on("click", function(event) {
+    event.preventDefault();
+    $(".wrap_menu .hotel-search-form-area").hide();
+  });
+
   /*------------------
 		Background Set
 	--------------------*/
