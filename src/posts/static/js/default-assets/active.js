@@ -297,8 +297,9 @@
   // ******************************
   if ($.fn.datepicker) {
     $(".input-daterange").datepicker({
-      format: "dd/mm/yy",
-      multidate: true,
+      format: "dd/mm/yyyy",
+      multidate: false,
+      weekStart: 1,
       keyboardNavigation: false,
       forceParse: false,
       daysOfWeekHighlighted: "0,1,2,3,4,5,6",

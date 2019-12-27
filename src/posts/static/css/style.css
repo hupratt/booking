@@ -1,38 +1,4 @@
-/* ------------------------------------------
-[Master Stylesheet]
 
-Template Name: Roberto - Hotel & Resort HTML Template
-Template Author: Colorlib
-Template Author URL: http://colorlib.com
-Version: 1.0.0
-Last Update: Feb 9, 2019
----------------------------------------------
-
----------------------------------------------
-[Tables of CSS Content]
-
-+ body
-
-- 01.0 Reboot Area CSS
-- 02.0 Spacing Area CSS
-- 03.0 Preloader Area CSS
-- 04.0 Heading Area CSS
-- 05.0 Backtotop Area CSS
-- 06.0 Buttons Area CSS
-- 07.0 Header Area CSS
-- 08.0 Hero Area CSS
-- 09.0 Footer Area CSS
-- 10.0 Partner Area CSS
-- 11.0 Project Area CSS
-- 12.0 CTA Area CSS
-- 13.0 Testimonial Area CSS
-- 14.0 Room Area CSS
-- 15.0 About Area CSS
-- 16.0 Contact Area CSS
-- 17.0 Widget Area CSS
-- 18.0 Breadcrumb Area CSS
-- 19.0 Blog Area CSS
---------------------------------------------- */
 /* Import Fonts & All CSS */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700");
 @import url(bootstrap.min.css);
@@ -301,8 +267,8 @@ input:focus {
   overflow: hidden; }
 
 .loader,
-.loader:before,
-.loader:after {
+.loader::before,
+.loader::after {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
@@ -321,8 +287,8 @@ input:focus {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s; }
 
-.loader:before,
-.loader:after {
+.loader::before,
+.loader::after {
   content: '';
   position: absolute;
   top: 0; }
