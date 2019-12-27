@@ -2562,7 +2562,7 @@ a {
   }
 }
 
-@keyframes from_top {
+/* @keyframes from_top {
   0% {
     top:-1000px
   }
@@ -2570,17 +2570,15 @@ a {
   100% {
     top:0px
   }
-}
-
-
+} */
 
 .wrap_menu .hotel-search-form-area {
   top:0px;
   width: 100%;
   left: 0;
   position: absolute;
-  -webkit-animation: from_top 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
-  animation: from_top 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+  /* -webkit-animation: from_top 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+  animation: from_top 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s; */
 }
 
 
