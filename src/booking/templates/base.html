@@ -12,9 +12,12 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Rural Portugal: holiday experiences</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
     <link rel="icon" href='{%  static "logo/Frame 1.png" %}' />
+    <link rel="stylesheet" href="{% static 'css/schedule.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+    
   </head>
 
   <body >
@@ -26,11 +29,14 @@
     
     {% endblock %}
 
-    <!-- **** All JS Files ***** -->
+    <!-- **** All JS Files ***** -->   
     <!-- jQuery 2.2.4 -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <!-- All Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+
     <script src="{% static 'js/roberto.bundle.js' %}"></script>
+    <script src="{% static 'js/schedule.js' %}"></script>
     <!-- Active -->
     <script src="{% static 'js/default-assets/active.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>

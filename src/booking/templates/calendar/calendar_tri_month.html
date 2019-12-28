@@ -1,6 +1,4 @@
-{% extends "base.html" %}
 {% load scheduletags i18n %}
-{% block body %}
 <div class="tablewrapper">
   <div class="calendarname">{{ calendar.name }}</div>
   {% prevnext "tri_month_calendar" calendar period "F Y"%}
@@ -27,4 +25,3 @@
     {% trans "Full Year Calendar" %}
   </a>
 </div>
-{% endblock %}

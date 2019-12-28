@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 
             ],
+        "libraries": {"scheduletags": "schedule.templatetags.scheduletags",},
         },
     },
 ]
