@@ -18,7 +18,7 @@ urlpatterns = [
     path('schedule/', include('schedule.urls')),
     path('fullcalendar/', TemplateView.as_view(template_name="calendar/fullcalendar.html"), name='fullcalendar'),
     path('schedule/<calendar_slug>/', 
-        CalendarByPeriodsView.as_view(template_name="detail.html"),
+        CalendarByPeriodsView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
         kwargs={"period": Month},
     )

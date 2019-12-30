@@ -55,4 +55,4 @@ def detail(request, slug):
             "month_year": post.timestamp.strftime("%B, %Y"),
             "img_list": img_list,
         }
-    return render(request, "detail.html", context)  # queryset
+    return render(request, "detail_location.html", context)  # queryset
