@@ -1,5 +1,5 @@
 
-from posts.models import Post
+from locations.models import Post
 
 def create_connection_postgres():
     import psycopg2

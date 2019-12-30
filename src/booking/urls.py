@@ -33,8 +33,8 @@ urlpatterns += i18n_patterns(
     path('', TemplateView.as_view(template_name="intro.html"), name='intro'), 
     path('properties', TemplateView.as_view(template_name="properties.html"), name='properties'), 
     path('search', TemplateView.as_view(template_name="search.html"), name='search'), 
-    path(_('posts/'), include('posts.urls')),
-    path(_('calendar/'), include('propcalendar.urls')),
+    path(_('locations/'), include('locations.urls')),
+    path(_('rooms/'), include('rooms.urls')),
     prefix_default_language=True)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

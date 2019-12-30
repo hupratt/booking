@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'klingon',
     'schedule',
-    'posts',
-    'propcalendar',
+    'locations',
+    'rooms',
 ]
 
 MIDDLEWARE = [
