@@ -4,21 +4,26 @@
 
 {% block body %}
 
-
-
 <!-- Header Area Start -->
 <header class="header-area"></header>
 <!-- Header Area End -->
 
-{% include "pages/loader.html" %}
+{% include "pages/loader.html" %} 
+
 {% include "pages/intro.html" %} 
 
-{% endblock %}
+{% endblock%} 
 
-{% block scripts %} 
+{% block scripts %}
 
-<script>
-$(".owl-nav").remove();
+<script type="text/javascript">
+$(window).on("load", function() {
+  $(".owl-nav").remove();
+//   $(".owl-stage").css({"transform":"translate3d(-3088px, 0px, 0px)", "width": "10808px;"});
+//   $(".owl-item").each(function(index) {
+//       $(this).css({"width":"1544px;"});
+//     });
+});
 </script>
 
 {% endblock %}

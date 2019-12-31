@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, PostImage
+from .models import Location, LocationImage
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
@@ -13,15 +13,15 @@ class PostModelAdmin(admin.ModelAdmin):
     inlines = [TranslationInline]
     # actions = [create_translations]
     class Meta:
-        model = Post
-admin.site.register(Post,PostModelAdmin)
+        model = Location
+admin.site.register(Location,PostModelAdmin)
 
 
 class PostImageModelAdmin(admin.ModelAdmin):
-    list_display = ['image','post','created']
+    list_display = ['image','location','created']
     class Meta:
-        model = PostImage
-admin.site.register(PostImage,PostImageModelAdmin)
+        model = LocationImage
+admin.site.register(LocationImage,PostImageModelAdmin)
 
 from django.contrib.sessions.models import Session
 class SessionAdmin(admin.ModelAdmin):

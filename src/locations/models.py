@@ -7,8 +7,11 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 from django.forms import ValidationError
+from django.contrib.contenttypes.fields import GenericRelation
+from django.contrib.contenttypes.models import ContentType
+from schedule.models import CalendarRelation, Calendar
 
-class Post(models.Model, Translatable):
+class Location(models.Model, Translatable):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE
     )
@@ -50,11 +53,11 @@ class Post(models.Model, Translatable):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title[:49])  # pylint: disable=unsubscriptable-object
 
-        super(Post, self).save(*args, **kwargs)
+        super(Location, self).save(*args, **kwargs)
 
-class PostImage(models.Model):
+class LocationImage(models.Model):
     image = models.FileField( blank=True, null=True)
-    post = models.ForeignKey("post", on_delete=models.PROTECT, related_name='images')
+    location = models.ForeignKey("Location", on_delete=models.PROTECT, related_name='images')
     created = models.DateTimeField(auto_now_add=True)
     alt = models.CharField(max_length=120, default="blank")
 

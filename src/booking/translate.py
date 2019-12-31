@@ -1,5 +1,5 @@
 
-from locations.models import Post
+from locations.models import Location
 
 def create_connection_postgres():
     import psycopg2
@@ -38,7 +38,7 @@ def translate(posts, lang):
         fetch = c.fetchone()
         if fetch is not None and post.content is not None and type(fetch) is tuple:
             post.content = ''.join(fetch)
-    if isinstance(posts, Post):
+    if isinstance(posts, Location):
         werk(posts)
     else:
         for post in posts:

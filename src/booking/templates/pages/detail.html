@@ -113,7 +113,9 @@
           <p>
             {{ post.content }}
           </p>
-
+          {% for room in rooms_list %}
+          <p>{{ room.name }}</p>
+          {% endfor %}
         </div>
   <!-- Hotel Search Form Area -->
   <div class="hotel-search-form-area">

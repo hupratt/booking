@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 import datetime, pytz
-from .models import Post, PostImage
+from .models import Location, LocationImage
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
+from schedule.models import CalendarRelation
 
 # Create your views here.
 
 class AboutView(ListView):
-    model = Post
+    model = Location
     template_name = "about.html"
     context_object_name = 'about_us_with_properties'
 
@@ -17,7 +18,7 @@ class AboutView(ListView):
 
         context = super().get_context_data(**kwargs)
         language = get_language()
-        liste_events_en = Post.objects.all().filter(tag='property').order_by('timestamp')
+        liste_events_en = Location.objects.all().filter(tag='property').order_by('timestamp')
         if language == 'en':
             context['properties'] = liste_events_en
         else:
@@ -29,10 +30,10 @@ class AboutView(ListView):
 
 def detail(request, slug):
     """
-    Posts method: display the article's detail
+    Locations method: display the location's detail and associated rooms
 
     """
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Location, slug=slug)
     from django.utils.translation import get_language
 
     language = get_language()
@@ -41,18 +42,20 @@ def detail(request, slug):
     sys.path.append("..")
     from booking.translate import translate
 
-    img_list = PostImage.objects.filter(post=post)  
-
+    img_list = LocationImage.objects.filter(location=post)  
+    rooms_list = CalendarRelation.objects.filter(object_id=post.id)
     if language == "en":
         context = {
             "post": post,
             "month_year": post.timestamp.strftime("%B, %Y"),
             "img_list": img_list,
+            "rooms_list": rooms_list
         }
     else:
         context = {
             "post": translate(post, language),
             "month_year": post.timestamp.strftime("%B, %Y"),
             "img_list": img_list,
+            "rooms_list": rooms_list
         }
     return render(request, "detail_location.html", context)  # queryset
