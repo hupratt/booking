@@ -163,3 +163,5 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+COMMERCIAL_PHONE_NUMBER = "+10 367 457 735"

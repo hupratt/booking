@@ -53,7 +53,9 @@ p {
   line-height: 1.7;
   color: #636a76;
   font-size: 16px;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 0rem;
+}
 
 img {
   max-width: 100%;

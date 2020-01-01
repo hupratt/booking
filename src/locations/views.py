@@ -5,6 +5,7 @@ from .models import Location, LocationImage
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from schedule.models import CalendarRelation
+from django.conf import settings
 
 # Create your views here.
 
@@ -49,13 +50,15 @@ def detail(request, slug):
             "post": post,
             "month_year": post.timestamp.strftime("%B, %Y"),
             "img_list": img_list,
-            "rooms_list": rooms_list
+            "rooms_list": rooms_list,
+            "phone_number": settings.COMMERCIAL_PHONE_NUMBER
         }
     else:
         context = {
             "post": translate(post, language),
             "month_year": post.timestamp.strftime("%B, %Y"),
             "img_list": img_list,
-            "rooms_list": rooms_list
+            "rooms_list": rooms_list,
+            "phone_number": settings.COMMERCIAL_PHONE_NUMBER
         }
     return render(request, "detail_location.html", context)  # queryset

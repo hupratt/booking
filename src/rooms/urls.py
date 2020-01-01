@@ -17,9 +17,7 @@ from .views import RoomView
 urlpatterns = [
     # path('', TemplateView.as_view(template_name="calendar/homepage.html"),),
     path('schedule/', include('schedule.urls')),
-    # override the "tri_month_calendar" from the "schedule" app
     path('schedule/<calendar_slug>/', 
-        # CalendarByPeriodsView.as_view(template_name="detail_room.html"),
         RoomView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
         kwargs={"period": Month},

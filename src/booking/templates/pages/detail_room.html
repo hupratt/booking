@@ -20,19 +20,19 @@
             </div>
             <div class="single_quantity">
               <img src="{% static 'img/svg_icon/color_bed.svg' %}" alt="" />
-              <span>2 Bed</span>
+              <span>{{ calendar.double_bed_number }} Double Bed</span>
             </div>
             <div class="single_quantity">
               <img src="{% static 'img/svg_icon/color_bath.svg' %}" alt="" />
-              <span>2 Bath</span>
+              <span>{{ calendar.bath_number }} Private Bathroom</span>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xl-6 col-md-4 col-lg-6">
         <div class="prise_quantity">
-          <h4>$4567</h4>
-          <a href="#">+10 367 457 735</a>
+          <h4>{{ calendar.price }} €</h4>
+          <a href="#">{{ phone_number }}</a>
         </div>
       </div>
     </div>
