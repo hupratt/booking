@@ -2138,7 +2138,7 @@ Responsive
 .header-fixed .wrap-menu-header {
   position: fixed;
   height: 100px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(255, 255, 255);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
