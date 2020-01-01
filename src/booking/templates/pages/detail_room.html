@@ -11,13 +11,12 @@
         <div class="comfortable_apartment">
           <h4>{{ calendar.name }}</h4>
           <p>
-            <img src="{% static 'img/svg_icon/location.svg' %}" alt="" /> 200/A,
-            Greenland, Texaro, USA
+            <img src="{% static 'img/svg_icon/location.svg' %}" alt="" /> {{ parent_location.gps_location }}
           </p>
           <div class="quality_quantity d-flex">
             <div class="single_quantity">
               <img src="{% static 'img/svg_icon/color_box.svg' %}" alt="" />
-              <span>1200 Sqft</span>
+              <span>{{ calendar.surface_area_sqmeter }} m2</span>
             </div>
             <div class="single_quantity">
               <img src="{% static 'img/svg_icon/color_bed.svg' %}" alt="" />
@@ -114,12 +113,9 @@
         <div class="details_info">
           <h4>Description</h4>
           <p>
-            {{ post.content }}
+            {{ calendar.description }}
           </p>
-          {% for room in rooms_list %}
-          <p>{{ room.calendar.name }}</p>
-          <a href="{% url "tri_month_calendar" room.calendar.slug %}" class="trendybutton">MORE INFO</a>
-          {% endfor %}
+
         </div>
 
   <!-- Hotel Search Form Area -->
