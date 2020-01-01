@@ -81,7 +81,7 @@
 
                 <ol class="carousel-indicators">
                   {% for img in room_images %}
-                  {% if forloop.counter == 1 %} 
+                  {% if forloop.counter0 == 0 %} 
                   <li
                     data-target="#room-thumbnail--slide"
                     data-slide-to="0"
@@ -94,7 +94,7 @@
                     />
                   </li>
                   {% else %}
-                  <li data-target="#room-thumbnail--slide" data-slide-to="1">
+                  <li data-target="#room-thumbnail--slide" data-slide-to="{{ forloop.counter0 }}">
                     <img
                       src="{{ img.image.url }}"
                       class="d-block w-100"
