@@ -3,9 +3,18 @@ from schedule.models import Calendar
 import os
 from locations.models import Location
 from schedule.models import CalendarRelation
+from django.urls import reverse
 # Create your models here.
 
 class Room(Calendar):
+
+    price = models.PositiveSmallIntegerField()
+    single_bed_number = models.PositiveSmallIntegerField()
+    double_bed_number = models.PositiveSmallIntegerField()
+    bath_number = models.PositiveSmallIntegerField()
+    surface_area_sqmeter = models.PositiveSmallIntegerField()
+    description = models.CharField(max_length=120, null=True, blank=True)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -14,12 +23,11 @@ class Room(Calendar):
 
     def __unicode__(self):
         return self.name
-    price = models.PositiveSmallIntegerField()
-    single_bed_number = models.PositiveSmallIntegerField()
-    double_bed_number = models.PositiveSmallIntegerField()
-    bath_number = models.PositiveSmallIntegerField()
-    surface_area_sqmeter = models.PositiveSmallIntegerField()
-    description = models.CharField(max_length=120, null=True, blank=True)
+        
+    def get_absolute_url(self):
+        return reverse("tri_month_calendar", kwargs={"calendar_slug": self.slug})
+    def max_capacity(self):
+        return self.single_bed_number + self.double_bed_number *2
 
     def get_parent_location(self):
         calendarRelation_qs = CalendarRelation.objects.filter(calendar_id=self.id)
@@ -30,6 +38,10 @@ class Room(Calendar):
         if len(parent_location)>1:
             raise ValueError("A room can only have one parent location")
         return parent_location[0]
+
+    def get_room_thumbnail(self):
+        room = self.get_room_images()[0]
+        return room
 
     def get_room_images(self):
         return RoomImage.objects.filter(location_id=self.id)

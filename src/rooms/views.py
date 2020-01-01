@@ -22,5 +22,4 @@ class RoomsListView(ListView):
     paginate_by = 10 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        # context["room_images"] = room.get_room_images()
         return context
