@@ -11,6 +11,7 @@ from schedule.periods import Day, Month, Week, Year
 from schedule.views import (
     CalendarByPeriodsView
 )
+from .views import RoomView
 
 
 urlpatterns = [
@@ -18,7 +19,8 @@ urlpatterns = [
     path('schedule/', include('schedule.urls')),
     # override the "tri_month_calendar" from the "schedule" app
     path('schedule/<calendar_slug>/', 
-        CalendarByPeriodsView.as_view(template_name="detail_room.html"),
+        # CalendarByPeriodsView.as_view(template_name="detail_room.html"),
+        RoomView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
         kwargs={"period": Month},
     )

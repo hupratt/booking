@@ -11,9 +11,9 @@
           <p>
             <img src="{% static 'img/svg_icon/location.svg' %}" alt="" /> 
         
-            Parada de Atei 4880-043 Atei, Mondim de Basto, Vila Real - Mondim de Basto (Ave)
+            {{ post.gps_location }}
             <i class="fa fa-map" style="margin-right: 3.5px;"></i>
-            Latitude 41.446613348109 - Longitude -7.928573907227
+            {{ post.gps_coordinates }}
             
           </p>
         </div>

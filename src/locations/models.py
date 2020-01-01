@@ -16,7 +16,8 @@ class Location(models.Model, Translatable):
         settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE
     )
     title = models.CharField(max_length=120)
-    location = models.CharField(max_length=120, null=True, blank=True)
+    gps_location = models.CharField(max_length=120, null=True, blank=True)
+    gps_coordinates = models.CharField(max_length=120, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=False)
     slug = models.SlugField(null=False, unique=True)
