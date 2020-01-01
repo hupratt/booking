@@ -11,13 +11,13 @@ from schedule.periods import Day, Month, Week, Year
 from schedule.views import (
     CalendarByPeriodsView
 )
-from .views import RoomView
+from .views import RoomView, RoomsListView
 
 
 urlpatterns = [
-    # path('', TemplateView.as_view(template_name="calendar/homepage.html"),),
+    path('list/', RoomsListView.as_view(template_name="list.html"), name='rooms-list'), 
     path('schedule/', include('schedule.urls')),
-    path('schedule/<calendar_slug>/', 
+    path('schedule/<calendar_slug>', 
         RoomView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
         kwargs={"period": Month},

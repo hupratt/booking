@@ -31,8 +31,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', TemplateView.as_view(template_name="intro.html"), name='intro'), 
-    path('properties', TemplateView.as_view(template_name="properties.html"), name='properties'), 
-    path('search', TemplateView.as_view(template_name="search.html"), name='search'), 
+    # path('search', TemplateView.as_view(template_name="search.html"), name='search'), 
     path(_('locations/'), include('locations.urls')),
     path(_('rooms/'), include('rooms.urls')),
     prefix_default_language=True)
