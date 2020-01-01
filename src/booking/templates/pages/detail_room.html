@@ -1,0 +1,195 @@
+{% load static i18n %}
+
+<!-- property details -->
+<div class="property_details_banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-md-8 col-lg-6">
+        <div class="comfortable_apartment">
+          <h4>{{ calendar.name }}</h4>
+          <p>
+            <img src="{% static 'img/svg_icon/location.svg' %}" alt="" /> 200/A,
+            Greenland, Texaro, USA
+          </p>
+          <div class="quality_quantity d-flex">
+            <div class="single_quantity">
+              <img src="{% static 'img/svg_icon/color_box.svg' %}" alt="" />
+              <span>1200 Sqft</span>
+            </div>
+            <div class="single_quantity">
+              <img src="{% static 'img/svg_icon/color_bed.svg' %}" alt="" />
+              <span>2 Bed</span>
+            </div>
+            <div class="single_quantity">
+              <img src="{% static 'img/svg_icon/color_bath.svg' %}" alt="" />
+              <span>2 Bath</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-4 col-lg-6">
+        <div class="prise_quantity">
+          <h4>$4567</h4>
+          <a href="#">+10 367 457 735</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- details  -->
+<div class="property_details">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="property_banner">
+          <div class="property_banner_active">
+            <div class="room-thumbnail-slides mb-50">
+              <div
+                id="room-thumbnail--slide"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+              
+              
+                <div class="carousel-inner">
+                  {% for img in img_list %}
+                  {% if forloop.counter == 1 %} 
+
+                  <div class="carousel-item active">
+                    <img
+                      src="{{ img.image.url }}"
+                      class="d-block w-100"
+                      alt="{{ img.alt }}"
+                    />
+                  </div>
+                  {% else %}
+                  <div class="carousel-item">
+                    <img
+                      src="{{ img.image.url }}"
+                      class="d-block w-100"
+                      alt="{{ img.alt }}"
+                    />
+                  </div>
+                  {% endif %}	
+                  {% endfor %}
+                  
+                </div>
+
+                <ol class="carousel-indicators">
+                  {% for img in img_list %}
+                  {% if forloop.counter == 1 %} 
+                  <li
+                    data-target="#room-thumbnail--slide"
+                    data-slide-to="0"
+                    class="active"
+                  >
+                    <img
+                      src="{{ img.image.url }}"
+                      class="d-block w-100"
+                      alt="{{ img.alt }}"
+                    />
+                  </li>
+                  {% else %}
+                  <li data-target="#room-thumbnail--slide" data-slide-to="1">
+                    <img
+                      src="{{ img.image.url }}"
+                      class="d-block w-100"
+                      alt="{{ img.alt }}"
+                    />
+                  </li>
+                  {% endif %}	
+                  {% endfor %}
+
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="details_info">
+          <h4>Description</h4>
+          <p>
+            {{ post.content }}
+          </p>
+          {% for room in rooms_list %}
+          <p>{{ room.calendar.name }}</p>
+          <a href="{% url "tri_month_calendar" room.calendar.slug %}" class="trendybutton">MORE INFO</a>
+          {% endfor %}
+        </div>
+
+  <!-- Hotel Search Form Area -->
+  <div class="hotel-search-form-area">
+    <div class="container-fluid">
+      <div class="hotel-search-form">
+        <form action="#" method="post">
+          <div class="row justify-content-between align-items-end">
+            <div class="col-6 col-md-2 col-lg-3">
+              <label for="checkIn">Check In</label>
+              <input
+                type="date"
+                class="form-control"
+                id="checkIn"
+                name="checkin-date"
+              />
+            </div>
+            <div class="col-6 col-md-2 col-lg-3">
+              <label for="checkOut">Check Out</label>
+              <input
+                type="date"
+                class="form-control"
+                id="checkOut"
+                name="checkout-date"
+              />
+            </div>
+            <div class="col-4 col-md-1">
+              <label for="room">Room</label>
+              <select name="room" id="room" class="form-control">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+              </select>
+            </div>
+            <div class="col-4 col-md-1">
+              <label for="adults">Adult</label>
+              <select name="adults" id="adults" class="form-control">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+              </select>
+            </div>
+            <div class="col-4 col-md-2 col-lg-1">
+              <label for="children">Children</label>
+              <select name="children" id="children" class="form-control">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-3">
+              <button type="submit" class="form-control btn roberto-btn w-100">
+                Check Availability
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end property details -->

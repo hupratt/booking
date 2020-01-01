@@ -14,9 +14,9 @@ from schedule.views import (
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="calendar/homepage.html"),),
+    # path('', TemplateView.as_view(template_name="calendar/homepage.html"),),
     path('schedule/', include('schedule.urls')),
-    path('fullcalendar/', TemplateView.as_view(template_name="calendar/fullcalendar.html"), name='fullcalendar'),
+    # override the "tri_month_calendar" from the "schedule" app
     path('schedule/<calendar_slug>/', 
         CalendarByPeriodsView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",

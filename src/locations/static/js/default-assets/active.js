@@ -268,9 +268,9 @@
   // *********************************
   // :: 15.0 Prevent Default 'a' Click
   // *********************************
-  $('a[href="#"]').on("click", function($) {
-    $.preventDefault();
-  });
+  // $('a[href="#"]').on("click", function($) {
+  //   $.preventDefault();
+  // });
 
   // *****************************
   // :: 16.0 Countdown Active Code
