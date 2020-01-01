@@ -16,10 +16,10 @@ class Location(models.Model, Translatable):
         settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE
     )
     title = models.CharField(max_length=120)
-    # ipython = models.FileField(blank=True, null=True)
+    location = models.CharField(max_length=120, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=False)
-    slug = models.SlugField(null=False, unique=True, default="property")
+    slug = models.SlugField(null=False, unique=True)
     tag = models.CharField(max_length=120, default="property")
     content = models.TextField(null=True, blank=True)
     draft = models.BooleanField(default=False)

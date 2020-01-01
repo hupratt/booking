@@ -10,6 +10,7 @@ class PostModelAdmin(admin.ModelAdmin):
     list_display = ['title','timestamp','updated','tag','id','user']
     list_filter = ["updated",'timestamp']
     search_fields = ['title','tag']
+    prepopulated_fields = {"slug": ("title",)}
     inlines = [TranslationInline]
     # actions = [create_translations]
     class Meta:

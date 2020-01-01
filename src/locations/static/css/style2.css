@@ -2592,3 +2592,10 @@ a {
   border: none;
   text-align: center;
 }
+
+
+/* Hide HTML5 Up and Down arrows on all browsers since it had weird effects on chrome */
+input[type="date"]::-webkit-outer-spin-button, input[type="date"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
