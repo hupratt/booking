@@ -323,8 +323,8 @@ Hero section
 }
 
 .container{
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 .hero-nav-slider {
@@ -2212,6 +2212,8 @@ Responsive
   height: 70px;
   margin-left: 20px;
   vertical-align: middle;
+  left: 60px;
+  position: absolute;
 }
 
 .wrap_menu {
@@ -2412,7 +2414,7 @@ a {
   color: #1cc3b2;
 }
 .hoverbtn {
-  position: relative;
+  position: absolute;
   top: 20px;
   letter-spacing: 0.15em;
   margin: 0 auto;
@@ -2421,6 +2423,7 @@ a {
   outline: none;
   font-size: 20px;
   color: #1cc3b2 !important;
+  right: 60px;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
 }
 .hoverbtn::after, .hoverbtn::before {
