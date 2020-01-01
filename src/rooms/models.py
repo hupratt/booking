@@ -26,6 +26,7 @@ class Room(Calendar):
         
     def get_absolute_url(self):
         return reverse("tri_month_calendar", kwargs={"calendar_slug": self.slug})
+        
     def max_capacity(self):
         return self.single_bed_number + self.double_bed_number *2
 
@@ -40,8 +41,7 @@ class Room(Calendar):
         return parent_location[0]
 
     def get_room_thumbnail(self):
-        room = self.get_room_images()[0]
-        return room
+        return self.get_room_images()[0]
 
     def get_room_images(self):
         return RoomImage.objects.filter(location_id=self.id)

@@ -41,12 +41,12 @@ data-img-url="{% static 'img/bg-img/16.jpg' %}"
           <h2>{{ obj.name }}</h2>
           <h4>{{ obj.price }} €<span>/ Day</span></h4>
           <div class="room-feature"> 
-            <h6>Size: <span>{{ obj.surface_area_sqmeter }} ft</span></h6>
+            <h6>Size: <span>{{ obj.surface_area_sqmeter }} m2</span></h6>
             <h6>Capacity: <span>Max {{ obj.max_capacity }} persons</span></h6>
             <h6>Bed: <span>Double bed</span></h6>
             <h6>Services: <span>Wifi, television ...</span></h6>
           </div>
-          <a href="#" class="btn view-detail-btn"
+          <a href="{{ obj.get_absolute_url }}" class="btn view-detail-btn"
             >View Details
             <i class="fa fa-long-arrow-right" aria-hidden="true"></i
           ></a>

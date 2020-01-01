@@ -42,30 +42,31 @@
               <div class="hotel-search-form-area">
                 <div class="container-fluid">
                   <div class="hotel-search-form">
-                    <form action="#" method="post">
+                    <form action="{% url 'rooms-list' %}" method="post">
+                      {% csrf_token %}
                       <div class="row justify-content-between align-items-end">
                         <div class="col-6 col-md-2 col-lg-3">
-                          <label for="checkIn">Check In</label>
+                          <label for="check_in">Check In</label>
                           
                           <input
                             type="date"
                             class="form-control"
-                            id="checkIn"
-                            name="checkin-date"
+                            id="check_in"
+                            name="check_in"
                           />
                         </div>
                         <div class="col-6 col-md-2 col-lg-3">
-                          <label for="checkOut">Check Out</label>
+                          <label for="check_out">Check Out</label>
                           <input
                             type="date"
                             class="form-control"
-                            id="checkOut"
-                            name="checkout-date"
+                            id="check_out"
+                            name="check_out"
                           />
                         </div>
                         <div class="col-4 col-md-1">
-                          <label for="room">Room</label>
-                          <select name="room" id="room" class="form-control">
+                          <label for="rooms">Room</label>
+                          <select name="rooms" id="rooms" class="form-control">
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
