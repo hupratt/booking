@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 # from django.conf import settings
 # from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -15,9 +16,9 @@ from .views import RoomView, RoomsListView
 
 
 urlpatterns = [
-    path('list/', RoomsListView.as_view(template_name="list.html"), name='rooms-list'), 
-    path('schedule/', include('schedule.urls')),
-    path('schedule/<calendar_slug>', 
+    path(_('list/'), RoomsListView.as_view(template_name="list.html"), name='rooms-list'), 
+    path(_('schedule/'), include('schedule.urls')),
+    path(_('schedule/<calendar_slug>'), 
         RoomView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
         kwargs={"period": Month},
