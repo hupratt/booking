@@ -1,6 +1,4 @@
-from schedule.views import (
-    CalendarByPeriodsView
-)
+from schedule.views import CalendarByPeriodsView
 from rooms.models import RoomImage, Room
 from locations.models import Location
 from schedule.models import CalendarRelation, Event
