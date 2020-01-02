@@ -13,17 +13,17 @@ from schedule.models import CalendarRelation, Calendar
 
 class Location(models.Model, Translatable):
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE,  help_text="(automatic) model linkage with the User"
     )
-    title = models.CharField(max_length=120)
-    gps_location = models.CharField(max_length=120, null=True, blank=True)
-    gps_coordinates = models.CharField(max_length=120, null=True, blank=True)
-    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
-    timestamp = models.DateTimeField(auto_now=False, auto_now_add=False)
-    slug = models.SlugField(null=False, unique=True)
-    tag = models.CharField(max_length=120, default="property")
-    content = models.TextField(null=True, blank=True)
-    draft = models.BooleanField(default=False)
+    title = models.CharField(max_length=120, help_text="(required) title of the house/property card")
+    gps_location = models.CharField(max_length=120, null=True, blank=True, help_text="(required) gps location of the house/property")
+    gps_coordinates = models.CharField(max_length=120, null=True, blank=True, help_text="(required) gps coordinates of the house/property")
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False, help_text="(automatic) timestamp for last update")
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=False, help_text="(automatic) timestamp for creation date")
+    slug = models.SlugField(null=False, unique=True, help_text="(automatic) unique identifier for url location")
+    tag = models.CharField(max_length=120, default="property", help_text="(automatic) unique tag")
+    content = models.TextField(null=True, blank=True, help_text="(optional) description of the house/property")
+    draft = models.BooleanField(default=False, help_text="(optional) description of the house/property")
     translatable_fields = ("title", "content")
 
     def __str__(self):
@@ -33,9 +33,7 @@ class Location(models.Model, Translatable):
         return self.title
 
     def get_absolute_url(self):
-        return reverse(
-            "detail", kwargs={"slug": self.slug}
-        )  # pylint: disable=no-member
+        return reverse("detail", kwargs={"slug": self.slug})  
 
 
     class Meta:
