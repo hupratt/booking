@@ -8,12 +8,12 @@ from django.urls import reverse
 
 class Room(Calendar):
 
-    price = models.PositiveSmallIntegerField()
-    single_bed_number = models.PositiveSmallIntegerField()
-    double_bed_number = models.PositiveSmallIntegerField()
-    bath_number = models.PositiveSmallIntegerField()
-    surface_area_sqmeter = models.PositiveSmallIntegerField()
-    description = models.CharField(max_length=120, null=True, blank=True)
+    price = models.PositiveSmallIntegerField(help_text="(required) price per night per person")
+    single_bed_number = models.PositiveSmallIntegerField(help_text="(required) number of single beds in the room")
+    double_bed_number = models.PositiveSmallIntegerField(help_text="(required) number of double beds in the room")
+    bath_number = models.PositiveSmallIntegerField(help_text="(required) number of bathrooms in the room")
+    surface_area_sqmeter = models.PositiveSmallIntegerField(help_text="(required) surface of the room in square meters")
+    description = models.CharField(max_length=120, null=True, blank=True, help_text="(optional) room description")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -47,10 +47,10 @@ class Room(Calendar):
         return RoomImage.objects.filter(location_id=self.id)
 
 class RoomImage(models.Model):
-    image = models.FileField( blank=True, null=True)
-    location = models.ForeignKey("Room", on_delete=models.PROTECT, related_name='room_image')
-    created = models.DateTimeField(auto_now_add=True)
-    alt = models.CharField(max_length=120, default="blank")
+    image = models.FileField( blank=True, null=True, help_text="(optional) room image field")
+    location = models.ForeignKey("Room", on_delete=models.PROTECT, related_name='room_image', help_text="(automatic) room model linkage")
+    created = models.DateTimeField(auto_now_add=True, help_text="(automatic) created date")
+    alt = models.CharField(max_length=120, default="blank", help_text="(required) SEO for images in order to provide accessibility for the visually impaired")
 
     def __str__(self):
         return self.alt
