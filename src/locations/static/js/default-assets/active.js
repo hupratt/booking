@@ -245,16 +245,6 @@
     });
   }
 
-  // ****************************
-  // :: 13.0 Scrollup Active Code
-  // ****************************
-  if ($.fn.scrollUp) {
-    roberto_window.scrollUp({
-      scrollSpeed: 1000,
-      scrollText: '<i class="fa fa-caret-up"></i>'
-    });
-  }
-
   // ******************************
   // :: 14.0 Counter Up Active Code
   // ******************************
