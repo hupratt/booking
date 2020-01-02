@@ -12,9 +12,7 @@ from django.contrib.contenttypes.models import ContentType
 from schedule.models import CalendarRelation, Calendar
 
 class Location(models.Model, Translatable):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE,  help_text="(automatic) model linkage with the User"
-    )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.CASCADE,  help_text="(automatic) model linkage with the User")
     title = models.CharField(max_length=120, help_text="(required) title of the house/property card")
     gps_location = models.CharField(max_length=120, null=True, blank=True, help_text="(required) gps location of the house/property")
     gps_coordinates = models.CharField(max_length=120, null=True, blank=True, help_text="(required) gps coordinates of the house/property")
