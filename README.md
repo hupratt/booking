@@ -1,7 +1,5 @@
 # Booking web application
 
-status: actively maintained
-
 https://rural.pythonbots.site/
 
 ## Architecture
