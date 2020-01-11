@@ -41,7 +41,7 @@ for (x in labels) {
 					echo 'pip upgrade done'
 					sudo $PYTHON_P -m pip install -r REQUIREMENTS.txt # Install or upgrade dependencies
 					echo 'pip install done'
-					sudo $PYTHON_P $GET_SECRET
+					# sudo $PYTHON_P $GET_SECRET
 					echo 'var import done'
 
 					# sudo $PYTHON_P manage.py createcachetable cache_table
