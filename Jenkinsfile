@@ -31,7 +31,7 @@ for (x in labels) {
 					cd $PROJECT
 					sudo virtualenv -p python3 .
 					sudo chmod -R 770 $PROJECT
-					sudo chown -R www-data:www-data $PROJECT
+					sudo chown -R ubuntu:www-data $PROJECT
 					. bin/activate
 					echo 'which python are you running?'
 					which python
@@ -64,7 +64,7 @@ for (x in labels) {
 				}
 			}
 		}
-    }
+   	}
 }
 
 throttle(['loadbalancer']) {
