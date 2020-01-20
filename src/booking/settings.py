@@ -69,7 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "Portfolio.context_processors.ga_tracking_id",
+                "booking.context_processors.ga_tracking_id",
                 
             ],
         "libraries": {"scheduletags": "schedule.templatetags.scheduletags",},
