@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from django.utils.translation import ugettext_lazy as _
 import os
-import sentry_sdk 
-from sentry_sdk.integrations.django import (
-    DjangoIntegration,
-)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)  
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -174,7 +171,10 @@ COMMERCIAL_PHONE_NUMBER = "+10 367 457 735"
 SENTRY_KEY = os.environ.get("SENTRY_KEY_rural")
 
 if os.environ.get("DJANGO_DEVELOPMENT") is None:
-
+    import sentry_sdk 
+    from sentry_sdk.integrations.django import (
+        DjangoIntegration,
+    )
     sentry_sdk.init(
         dsn="https://"
         + SENTRY_KEY
