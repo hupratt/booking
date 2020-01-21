@@ -168,13 +168,14 @@ LOCALE_PATHS = (
 COMMERCIAL_PHONE_NUMBER = "+10 367 457 735"
 
 # Sentry
-SENTRY_KEY = os.environ.get("SENTRY_KEY_rural")
+
 
 if os.environ.get("DJANGO_DEVELOPMENT") is None:
     import sentry_sdk 
     from sentry_sdk.integrations.django import (
         DjangoIntegration,
     )
+    SENTRY_KEY = os.getenv("SENTRY_KEY_rural","")
     sentry_sdk.init(
         dsn="https://"
         + SENTRY_KEY
