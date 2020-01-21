@@ -28,11 +28,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
 ]
-
+def trigger_error(request):
+    division_by_zero = 1 / 0
 urlpatterns += i18n_patterns(
     path('', TemplateView.as_view(template_name="intro.html"), name='intro'), 
     path(_('locations/'), include('locations.urls')),
     path(_('rooms/'), include('rooms.urls')),
+    path('sentry-debug/', trigger_error),
     prefix_default_language=True)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
