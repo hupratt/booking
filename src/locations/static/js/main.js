@@ -166,7 +166,6 @@ $(window).on("load", function() {
       '<i class="fa fa-angle-right"></i>'
     ]
   });
-
   /*----------------------------
 		Header fixed to header disappear
 	------------------------------*/

@@ -252,6 +252,12 @@ Hero section
   position: relative;
 }
 
+.section-heading-left{
+  top: 10vh;
+  padding-bottom: 0.2em;
+}
+
+
 .hero-slider .owl-item .hs-item a {
   visibility: hidden;
   background-color: #1cc3b2;
