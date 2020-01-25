@@ -41,7 +41,9 @@ class Room(Calendar):
         return parent_location[0]
 
     def get_room_thumbnail(self):
-        return self.get_room_images()[0]
+        found = self.get_room_images()
+        if len(found)>0:
+            return found[0]
 
     def get_room_images(self):
         return RoomImage.objects.filter(location_id=self.id)

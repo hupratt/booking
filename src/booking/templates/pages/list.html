@@ -30,12 +30,10 @@ data-img-url="{% static 'img/bg-img/16.jpg' %}"
         data-wow-delay="100ms"
       >
         <!-- Room Thumbnail -->
-        {% if obj.image %} 
         {% if obj.get_room_thumbnail.image %} 
         <div class="room-thumbnail">
           <img src="{{ obj.get_room_thumbnail.image.url }}" onclick="location.href='{{ obj.get_absolute_url }}';" alt="{{ obj.get_room_thumbnail.alt }}" />
         </div>
-        {% endif %}	
         {% endif %}	
 
         <!-- Room Content -->
