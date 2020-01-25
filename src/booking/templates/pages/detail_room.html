@@ -46,7 +46,7 @@
       <div class="col-xl-12">
         <div class="property_banner">
           <div class="property_banner_active">
-            <div class="room-thumbnail-slides mb-50">
+            <div class="room-thumbnail-slides mb-50" >
               <div
                 id="room-thumbnail--slide"
                 class="carousel slide"
@@ -54,11 +54,11 @@
               >
               
               
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
                   {% for img in room_images %}
                   {% if forloop.counter == 1 %} 
 
-                  <div class="carousel-item active">
+                  <div class="carousel-item active" >
                     <img
                       src="{{ img.image.url }}"
                       class="d-block w-100"
@@ -109,7 +109,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="col-xl-12" style="padding:50px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
         <div class="details_info">
           <h4>Description</h4>
           <p>
@@ -118,11 +118,9 @@
 
         </div>
 
-  <!-- Hotel Search Form Area -->
-  {% include "pages/search.html" %}
-<!-- End Hotel Search Form Area -->
   
       </div>
+      {% include "../calendar/calendar_tri_month.html" %}
     </div>
   </div>
 </div>

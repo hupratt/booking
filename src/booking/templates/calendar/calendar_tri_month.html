@@ -1,20 +1,27 @@
 {% load scheduletags i18n %}
-<div class="tablewrapper">
-  {% prevnext "tri_month_calendar" calendar period "F Y"%}
+<!-- details  -->
 
+<div class="col-xl-12 row" style="padding:50px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);margin-right: 0px;
+margin-left: 0px">
+        <!-- <div class="details_info">
+			<h4 style="bottom: 50px;">Availability</h4>
+		  </div> -->
 
-<table>
-	<tr>
-		<td valign="top">{% month_table calendar period "small" %}</td>
-		<td width="12">&nbsp;</td>
-		<td valign="top">{% month_table calendar period "small" +1 %}</td>
-		<td width="12">&nbsp;</td>
-		<td valign="top">{% month_table calendar period "small" +2 %}</td>
-	</tr>
-</table>
-</div>
-<div class="navigation">
-  <a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date period.start 1 %}">
-    {% trans "Full Year Calendar" %}
-  </a>
-</div>
+	<div class="tablewrapper">
+		<table>
+			<tr>
+			{% for month in period.get_months %}
+			<div class="tablewrapper">
+			<h4 style="font-size: 1.4rem;">{{month.name}}</h4>
+			<table>
+				<tr>
+					<td valign="top">{% month_table calendar month "small" %}</td>
+					<td width="10">&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+			{% endfor %}
+			</tr>
+		</table>
+	</div>
+	</div>

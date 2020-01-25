@@ -9,6 +9,7 @@
   text-align: center;
 }
 
+
 .tablewrapper a {
   color: #000;
 }
@@ -83,9 +84,6 @@ fieldset[disabled] .btn-custom.active {
 }
 
 
-.row-centered {
-    text-align:center;
-}
 
 .modal-content {
   color: #000;
@@ -99,6 +97,14 @@ fieldset[disabled] .btn-custom.active {
 
 
 .tablewrapper {
-  padding: 20px;
+  padding-top: 20px;
 
+}
+
+.tablewrapper > .tablewrapper{
+  padding-top: 0px;
+}
+
+tbody{
+  text-align: center
 }

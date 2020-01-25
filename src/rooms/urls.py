@@ -21,6 +21,11 @@ urlpatterns = [
     path(_('schedule/<calendar_slug>'), 
         RoomView.as_view(template_name="detail_room.html"),
         name="tri_month_calendar",
-        kwargs={"period": Month},
-    )
+        kwargs={"period": Year},
+    ),
+    path(_('calendar/year/<calendar_slug>'), 
+        CalendarByPeriodsView.as_view(template_name="calendar/calendar_year.html"),
+        name="year_calendar",
+        kwargs={"period": Year},
+    ),
 ]
