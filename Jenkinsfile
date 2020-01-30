@@ -2,7 +2,6 @@
 // labels need to be set on the node label property as well as on the "manage Jenkins" section of the settings
 // to test: see if one label triggers a job on all the web servers tagged with the label
 // See how it impacts the visual pipline plug in as well 
-// new pipelining with better permissions and adding a node
 
 def labels = ['master', 'slave', 'loadbalancer'] 
 def builders = [:]
@@ -17,7 +16,7 @@ for (x in labels) {
                 
 			node () {
 				
-				def NAME="la_petite_portugaise"
+				def NAME="booking"
 				def PROJECT="/home/ubuntu/Dev/${NAME}"
 				def SETTINGS="${PROJECT}/src/${NAME}/settings.py"
 				def MEDIA_ROOT="${PROJECT}/media"
