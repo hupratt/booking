@@ -4,7 +4,7 @@ def builders = [:]
 for (x in labels) {
     def label = x // Need to bind the label variable before the closure 
 
-	//  access token deprecation: testing
+	// access token deprecation: testing
     // Create a map to pass in to the 'parallel' step so we can fire all the builds at once
     builders[label] = {
 		timestamps {
