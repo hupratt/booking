@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'booking.wsgi.application'
 if os.environ.get("DJANGO_DEVELOPMENT") is not None:
     DATABASES = {
         "default": {
-            "ENGINE": os.environ.get("enginedb"),
+            "ENGINE": "django.db.backends.postgresql",
             "NAME": "booking",
             "USER": os.environ.get("dbuser"),
             "PASSWORD": os.environ.get("dbpassword"),
