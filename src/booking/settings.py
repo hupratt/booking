@@ -194,3 +194,38 @@ if os.environ.get("DJANGO_DEVELOPMENT") is None:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_PRELOAD = True
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s %(name)s.%(funcName)s:%(lineno)s- %(message)s"
+        },
+        "simple": {"format": "{levelname} {message}", "style": "{"},
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        "file": {
+            "level": "ERROR",  # ERROR
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "error.log"),
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        # create instance of log called 'django'
+        "django": {
+            # output logs to the console and to the file
+            "level": "INFO",
+            "handlers": ["file", "console"],
+            "propagate": True,
+        },
+        "daphne": {"handlers": ["file", "console"], "level": "INFO"},
+    },
+}
