@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY_booking')
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['rural.craftstudios.eu']
 
 
 # Application definition
