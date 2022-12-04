@@ -181,18 +181,6 @@ COMMERCIAL_PHONE_NUMBER = "+10 367 457 735"
 
 
 if os.environ.get("DJANGO_DEVELOPMENT") is None:
-    import sentry_sdk 
-    from sentry_sdk.integrations.django import (
-        DjangoIntegration,
-    )
-    # SENTRY_KEY = os.getenv("SENTRY_KEY_rural","")
-    sentry_sdk.init(
-        dsn="https://"
-        + os.environ.get("SENTRY_KEY")
-        + "@sentry.io/1890366",  
-        integrations=[DjangoIntegration()],
-        send_default_pii=True
-    )
     # SECURITY
 
     SECURE_HSTS_SECONDS = 31536000
