@@ -38,7 +38,7 @@ class RoomView(CalendarByPeriodsView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context["room_images"] = self.object.get_room_images()
-        context["parent_location"] = self.object.get_parent_location()
+        # context["parent_location"] = self.object.get_parent_location()
         context["phone_number"] = settings.COMMERCIAL_PHONE_NUMBER
         return context
 

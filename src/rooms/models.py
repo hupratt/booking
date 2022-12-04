@@ -4,6 +4,7 @@ import os
 from locations.models import Location
 from schedule.models import CalendarRelation
 from django.urls import reverse
+from locations.models import Location
 # Create your models here.
 
 class Room(Calendar):
@@ -14,6 +15,7 @@ class Room(Calendar):
     bath_number = models.PositiveSmallIntegerField(help_text="(required) number of bathrooms in the room")
     surface_area_sqmeter = models.PositiveSmallIntegerField(help_text="(required) surface of the room in square meters")
     description = models.CharField(max_length=120, null=True, blank=True, help_text="(optional) room description")
+    location = models.ForeignKey(Location, on_delete=models.PROTECT, related_name='location_room')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -59,6 +61,7 @@ class RoomImage(models.Model):
             
     def __unicode__(self):
         return self.alt
+
 
 
 
