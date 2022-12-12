@@ -14,7 +14,7 @@ https://booking.craftstudios.shop/
 - Any push to origin will trigger both webhooks however jenkins will only build the source code located in the "master" branch.
 
 <p align="center" width="100%">
-    <img width="50%" src="https://github.com/hupratt/booking/blob/master/arch.png?raw=true">
+    <img width="50%" src="https://github.com/hupratt/booking/blob/master/arch.drawio.png?raw=true">
 </p>
 
 ## Features
