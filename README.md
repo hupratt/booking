@@ -1,6 +1,6 @@
 # Booking web application
 
-https://rural.pythonbots.site/
+https://booking.craftstudios.shop/
 
 ## Architecture
 
