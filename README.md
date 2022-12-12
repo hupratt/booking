@@ -13,7 +13,7 @@ https://booking.craftstudios.shop/
 - Specifications of the Jenkinsfile can be found above.
 - Any push to origin will trigger both webhooks however jenkins will only build the source code located in the "master" branch.
 
-![alt text](https://github.com/hupratt/booking/blob/master/arch.png?raw=true)
+![alt text](https://github.com/hupratt/booking/blob/master/arch.png?raw=true){ width="800" height="600" style="display: block; margin: 0 auto" }
 
 ## Features
 
