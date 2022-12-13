@@ -1,7 +1,5 @@
 # Booking web application
 
-https://booking.craftstudios.shop/
-
 ## Architecture
 
 - Booking is a django web app with standard static templating running on apache as a web server.
