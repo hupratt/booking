@@ -1,5 +1,13 @@
 # Booking web application
 
+https://booking.craftstudios.shop/
+
+## Database UML
+<p align="center" width="100%">
+    <img width="90%" src="https://github.com/hupratt/booking/blob/master/db.png?raw=true">
+</p>
+
+
 ## Architecture
 
 - Booking is a django web app with standard static templating running on apache as a web server.
