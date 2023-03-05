@@ -1,5 +1,7 @@
 # Booking web application
 
+![Banner](https://github.com/hupratt/booking/blob/master/booking.jpg?raw=true)
+
 https://booking.craftstudios.shop/
 
 ## Database UML
@@ -29,3 +31,6 @@ https://booking.craftstudios.shop/
 - [x] Feature 3
 
 ## Next steps
+
+## Preview
+![ui-demo](https://github.com/hupratt/booking/blob/master/booking.gif?raw=true)
