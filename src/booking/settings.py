@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = ['booking.craftstudios.shop',"127.0.0.1"]
+ALLOWED_HOSTS = ['booking.craftstudios.shop',"127.0.0.1","booking.bitwcmd.duckdns.org"]
 
 
 # Application definition
