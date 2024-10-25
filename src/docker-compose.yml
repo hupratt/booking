@@ -1,0 +1,23 @@
+services:
+  backend:
+    container_name: booking
+    build: .
+    restart: always
+    ports:
+      - "9925:9925"
+    volumes:
+      - ./:/hdd/Dev/booking
+    env_file:
+      - .env
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    gunicorn booking.wsgi:application -w 2 --bind 0.0.0.0:9925"
+                  #  python manage.py runserver 0.0.0.0:9925"
+  # nginx:
+  #   restart: always
+  #   build: ./nginx/
+  #   ports:
+  #     - "8087:80"
+  #   volumes:
+  #     - ./static:/app/static
+  #     - ./media:/app/media
